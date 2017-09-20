@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ufus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ufus © 2017 | @akinjide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5a3-fy-GKv">
+                                <rect key="frame" x="92.5" y="533" width="135" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ufus.cc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgj-cQ-wdp">
+                                <rect key="frame" x="89" y="71" width="142.5" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="42"/>
+                                <color key="textColor" red="0.23529411764705882" green="0.28235294117647058" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ultra fast URL shortener" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jba-zV-tyL">
+                                <rect key="frame" x="78" y="126" width="164" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" red="0.23529411764705882" green="0.28235294117647058" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://" borderStyle="roundedRect" placeholder="Paste link" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FwH-kI-gXg">
+                                <rect key="frame" x="10" y="264" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2N5-hd-6Iu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5a3-fy-GKv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="75m-HI-aUR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5a3-fy-GKv" secondAttribute="bottom" constant="20" id="8V6-UU-hdU"/>
+                            <constraint firstAttribute="trailing" secondItem="FwH-kI-gXg" secondAttribute="trailing" constant="10" id="DaS-9X-uBa"/>
+                            <constraint firstItem="FwH-kI-gXg" firstAttribute="top" secondItem="Jba-zV-tyL" secondAttribute="bottom" constant="120" id="F1R-YQ-iOe"/>
+                            <constraint firstItem="rgj-cQ-wdp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FSU-sY-GYg"/>
+                            <constraint firstItem="FwH-kI-gXg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LVf-X3-rgL"/>
+                            <constraint firstItem="Jba-zV-tyL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cDL-xH-Ts3"/>
+                            <constraint firstItem="Jba-zV-tyL" firstAttribute="top" secondItem="rgj-cQ-wdp" secondAttribute="bottom" constant="5" id="cud-ry-CZy"/>
+                            <constraint firstItem="FwH-kI-gXg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="g0A-2c-Pet"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="longUrl" destination="FwH-kI-gXg" id="DGE-Qg-vPj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="129.92957746478874"/>
+        </scene>
+    </scenes>
+</document>
