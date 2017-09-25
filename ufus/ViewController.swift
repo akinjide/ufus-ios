@@ -48,8 +48,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.longUrl.becomeFirstResponder()
         self.longUrl.selectedTextRange = self.longUrl.textRange(from: self.longUrl.beginningOfDocument, to: self.longUrl.endOfDocument)
-//        UIPasteboard.general.string = self.longUrl.text!
-//        self.authorizePushNotification(shortUrl: self.longUrl.text!)
 
         if let longUrl = self.longUrl.text {
             UIPasteboard.general.string = longUrl
@@ -69,6 +67,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         content.title = "Link Shortened"
         content.body = shortUrl
         content.categoryIdentifier = "category"
+        content.sound = UNNotificationSound.default()
         
         UNUserNotificationCenter.current().getNotificationSettings { (settings) in
             if settings.authorizationStatus == .authorized {
@@ -104,13 +103,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func convertToDictionary(text: String) -> [String: Any]? {
-
-        // JSONSerialization.ReadingOptions.mutableContainers
-        // String(data: data, encoding: .utf8)
-
         if let data = text.data(using: .utf8) {
             do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                return try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]
             } catch {
                 print(error.localizedDescription)
             }
@@ -151,8 +146,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         return
                     }
                     
-                    let json = self.convertToDictionary(text: String(data: data, encoding: .utf8)!)!
-                    
                     // check for http errors
                     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                         self.activityIndicator.stopAnimating()
@@ -160,8 +153,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self.alertView(message: "Oops! You are trying to do something useful.")
                     }
                     
-                    if let shortUrl = json["short_url"] {
-                        self.longUrl.text = shortUrl as? String
+                    if let json = self.convertToDictionary(text: String(data: data, encoding: .utf8)!) {
+                        self.longUrl.text = json["short_url"] as? String
                         self.highlightAndCopyTextFieldContent()
                     }
                 }

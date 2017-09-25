@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8702B1ED1F729B8900940F40 /* ufus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8702B1EC1F729B8900940F40 /* ufus.png */; };
 		87C1A84C1F6B59FE00927C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C1A84B1F6B59FE00927C25 /* AppDelegate.swift */; };
 		87C1A84E1F6B59FE00927C25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C1A84D1F6B59FE00927C25 /* ViewController.swift */; };
 		87C1A8511F6B59FE00927C25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C1A84F1F6B59FE00927C25 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8702B1EC1F729B8900940F40 /* ufus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufus.png; sourceTree = "<group>"; };
 		87C1A8481F6B59FE00927C25 /* ufus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ufus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C1A84B1F6B59FE00927C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C1A84D1F6B59FE00927C25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				87C1A84B1F6B59FE00927C25 /* AppDelegate.swift */,
 				87C1A84D1F6B59FE00927C25 /* ViewController.swift */,
 				87C1A84F1F6B59FE00927C25 /* Main.storyboard */,
+				8702B1EC1F729B8900940F40 /* ufus.png */,
 				87C1A8551F6B59FE00927C25 /* Assets.xcassets */,
 				87C1A8571F6B59FE00927C25 /* LaunchScreen.storyboard */,
 				87C1A85A1F6B59FE00927C25 /* Info.plist */,
@@ -186,6 +189,7 @@
 			files = (
 				87C1A8591F6B59FE00927C25 /* LaunchScreen.storyboard in Resources */,
 				87C1A8561F6B59FE00927C25 /* Assets.xcassets in Resources */,
+				8702B1ED1F729B8900940F40 /* ufus.png in Resources */,
 				87C1A8511F6B59FE00927C25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
