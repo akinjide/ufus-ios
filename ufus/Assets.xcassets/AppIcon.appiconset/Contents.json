@@ -3,49 +3,49 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "ufus-40.png",
+      "filename" : "ufus-white-40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "ufus-60.png",
+      "filename" : "ufus-white-60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "ufus-58.png",
+      "filename" : "ufus-white-58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "ufus-87.png",
+      "filename" : "ufus-white-87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "ufus-80.png",
+      "filename" : "ufus-white-80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "ufus-120.png",
+      "filename" : "ufus-white-120.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "ufus-121.png",
+      "filename" : "ufus-white-121.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "ufus-180.png",
+      "filename" : "ufus-white-180.png",
       "scale" : "3x"
     }
   ],
