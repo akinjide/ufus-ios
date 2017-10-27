@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Date {
     func timeDisplay() -> String {
