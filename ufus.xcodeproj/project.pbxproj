@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8702B1ED1F729B8900940F40 /* ufus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8702B1EC1F729B8900940F40 /* ufus.png */; };
+		878DEA3E1F8CC45D00D41C70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DEA3D1F8CC45D00D41C70 /* Extensions.swift */; };
+		878DEA401F8D040000D41C70 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878DEA3F1F8D040000D41C70 /* HistoryTableViewCell.swift */; };
+		879754B41F88307B008EABA7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879754B31F88307B008EABA7 /* NotificationManager.swift */; };
+		87B627BC1F8DC5CD006BD59A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B627BB1F8DC5CD006BD59A /* CoreDataManager.swift */; };
 		87C1A84C1F6B59FE00927C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C1A84B1F6B59FE00927C25 /* AppDelegate.swift */; };
 		87C1A84E1F6B59FE00927C25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C1A84D1F6B59FE00927C25 /* ViewController.swift */; };
 		87C1A8511F6B59FE00927C25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C1A84F1F6B59FE00927C25 /* Main.storyboard */; };
@@ -29,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		8702B1EC1F729B8900940F40 /* ufus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ufus.png; sourceTree = "<group>"; };
+		878DEA3D1F8CC45D00D41C70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		878DEA3F1F8D040000D41C70 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		879754B31F88307B008EABA7 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		87B627BB1F8DC5CD006BD59A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		87C1A8481F6B59FE00927C25 /* ufus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ufus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C1A84B1F6B59FE00927C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C1A84D1F6B59FE00927C25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		878DEA3C1F8CC42F00D41C70 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				878DEA3D1F8CC45D00D41C70 /* Extensions.swift */,
+				879754B31F88307B008EABA7 /* NotificationManager.swift */,
+				87B627BB1F8DC5CD006BD59A /* CoreDataManager.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		87B0E4941F9C215900AB1A5D /* media */ = {
+			isa = PBXGroup;
+			children = (
+				8702B1EC1F729B8900940F40 /* ufus.png */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
 		87C1A83F1F6B59FE00927C25 = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +107,12 @@
 		87C1A84A1F6B59FE00927C25 /* ufus */ = {
 			isa = PBXGroup;
 			children = (
+				87FE54D31F8DBFEF003E4381 /* controller */,
+				87FE54D21F8DBFAE003E4381 /* view */,
+				878DEA3C1F8CC42F00D41C70 /* helpers */,
 				87C1A84B1F6B59FE00927C25 /* AppDelegate.swift */,
-				87C1A84D1F6B59FE00927C25 /* ViewController.swift */,
 				87C1A84F1F6B59FE00927C25 /* Main.storyboard */,
-				8702B1EC1F729B8900940F40 /* ufus.png */,
+				87B0E4941F9C215900AB1A5D /* media */,
 				87C1A8551F6B59FE00927C25 /* Assets.xcassets */,
 				87C1A8571F6B59FE00927C25 /* LaunchScreen.storyboard */,
 				87C1A85A1F6B59FE00927C25 /* Info.plist */,
@@ -100,6 +128,22 @@
 				87C1A8651F6B59FE00927C25 /* Info.plist */,
 			);
 			path = ufusTests;
+			sourceTree = "<group>";
+		};
+		87FE54D21F8DBFAE003E4381 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				878DEA3F1F8D040000D41C70 /* HistoryTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		87FE54D31F8DBFEF003E4381 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				87C1A84D1F6B59FE00927C25 /* ViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878DEA401F8D040000D41C70 /* HistoryTableViewCell.swift in Sources */,
 				87C1A84E1F6B59FE00927C25 /* ViewController.swift in Sources */,
 				87C1A84C1F6B59FE00927C25 /* AppDelegate.swift in Sources */,
+				878DEA3E1F8CC45D00D41C70 /* Extensions.swift in Sources */,
+				879754B41F88307B008EABA7 /* NotificationManager.swift in Sources */,
+				87B627BC1F8DC5CD006BD59A /* CoreDataManager.swift in Sources */,
 				87C1A8541F6B59FE00927C25 /* ufus.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6PX7PBJFKL;
 				INFOPLIST_FILE = ufus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.akinjide.ufus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6PX7PBJFKL;
 				INFOPLIST_FILE = ufus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.akinjide.ufus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
