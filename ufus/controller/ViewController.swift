@@ -17,8 +17,8 @@ struct History {
 
 class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     let notificationManager: NotificationManager = NotificationManager()
-    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-    let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width), height: 60))
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle(rawValue: 20)!)
+    let searchBar = UISearchBar(frame: CGRect(x: 0, y: 60, width: (UIScreen.main.bounds.width), height: 60))
     var refresher: UIRefreshControl!
     var linkHistory = [History]()
     
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         searchBar.keyboardType = .URL
         searchBar.keyboardAppearance = .dark
         self.definesPresentationContext = true
-//        recentTableView.sectionHeaderHeight = 70
+        recentTableView.sectionHeaderHeight = 70
         recentTableView.tableHeaderView = self.searchBar
 
         recentTableView.setContentOffset(CGPoint(x: 0, y: searchBar.frame.height), animated: true)
@@ -152,18 +152,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         return [removeAction, copyAction]
     }
 
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 18))
-//        let label = UILabel(frame: CGRect(x: 10, y: 10, width: (UIScreen.main.bounds.width), height: 50))
-//
-//        label.text = "Recent"
-//        label.font = UIFont.boldSystemFont(ofSize: 38.0)
-//        label.textColor = UIColor.darkGray
-//        view.backgroundColor = UIColor.white
-//        view.addSubview(label)
-//
-//        return view
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 18))
+        let label = UILabel(frame: CGRect(x: 10, y: 10, width: (UIScreen.main.bounds.width), height: 50))
+        let borderLayer = CALayer()
+        
+        label.text = "Recents"
+        label.font = UIFont.boldSystemFont(ofSize: 36.0)
+        label.textColor = UIColor.black
+        header.backgroundColor = UIColor.white
+        borderLayer.backgroundColor = UIColor.lightGray.cgColor
+        borderLayer.frame = CGRect(x: 0, y: (label.frame.height + 19), width: header.frame.width, height: 0.5)
+
+        header.addSubview(label)
+        header.layer.addSublayer(borderLayer)
+
+        return header
+    }
     
     @IBOutlet weak var recentTableView: UITableView!
     @IBOutlet weak var longUrl: UITextField!
