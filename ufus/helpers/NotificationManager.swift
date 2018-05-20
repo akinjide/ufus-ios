@@ -17,9 +17,9 @@ class NotificationManager: NSObject {
         return NotificationManager()
     }()
     
-    func authorizePushNotification(_ shortUrl: String, title: String = "Link Shortened") -> Void {
+    func authorizePushNotification(_ shortUrl: String, title: String = "link_shortened".localized()) -> Void {
         let content = UNMutableNotificationContent()
-        let copy = UNNotificationAction(identifier: "copy", title: "Copy", options: .foreground)
+        let copy = UNNotificationAction(identifier: "copy", title: "copy".localized(), options: .foreground)
         let category = UNNotificationCategory(identifier: "category", actions: [copy], intentIdentifiers: [], options: [])
         
         UNUserNotificationCenter.current().setNotificationCategories([category])

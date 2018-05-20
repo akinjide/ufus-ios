@@ -18,7 +18,7 @@ struct History {
 class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     let notificationManager: NotificationManager = NotificationManager()
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle(rawValue: 20)!)
-    let searchBar = UISearchBar(frame: CGRect(x: 0, y: 60, width: (UIScreen.main.bounds.width), height: 60))
+    let searchBar = UISearchBar(frame: CGRect(x: 0, y: 15, width: (UIScreen.main.bounds.width), height: 30))
     var refresher: UIRefreshControl!
     var linkHistory = [History]()
     
@@ -34,23 +34,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         self.activityIndicator.color = UIColor.darkGray
         
         refresher = UIRefreshControl()
-        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.attributedTitle = NSAttributedString(string: "pull_to_refresh".localized())
         refresher.addTarget(self, action: #selector(ViewController.viewDidPopulate), for: UIControlEvents.valueChanged)
         refresher.backgroundColor = UIColor.white
         recentTableView.addSubview(refresher)
         self.linkHistory = CoreDataManager.loadObject()
         
         if linkHistory.count == 0 {
-            recentTableView?.isHidden = true
+            // recentTableView?.isHidden = true
         }
         
         searchBar.searchBarStyle = .minimal
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = "search_recents".localized()
         searchBar.keyboardType = .URL
-        searchBar.keyboardAppearance = .dark
+        searchBar.keyboardAppearance = .light
         self.definesPresentationContext = true
-        recentTableView.sectionHeaderHeight = 70
-        recentTableView.tableHeaderView = self.searchBar
+        recentTableView.sectionHeaderHeight = 60
+        // recentTableView.tableHeaderView = self.searchBar
 
         recentTableView.setContentOffset(CGPoint(x: 0, y: searchBar.frame.height), animated: true)
         recentTableView.reloadData()
@@ -103,43 +103,43 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         let userViewData = self.linkHistory[indexPath.row]
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        alert.addAction(UIAlertAction(title: "Copy Link", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "copy_link".localized(), style: .default, handler: { (action) in
             UIPasteboard.general.string = userViewData.short_url
-            self.alertView(title: nil, message: "Copied", alertType: "popup")
+            self.alertView(title: nil, message: "copied".localized(), alertType: "popup")
         }))
         
-        alert.addAction(UIAlertAction(title: "Copy Original Link", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "copy_original_link".localized(), style: .default, handler: { (action) in
             UIPasteboard.general.string = userViewData.long_url
-            self.alertView(title: nil, message: "Copied", alertType: "popup")
+            self.alertView(title: nil, message: "copied".localized(), alertType: "popup")
         }))
         
-        alert.addAction(UIAlertAction(title: "View in Browser", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "view_in_browser".localized(), style: .default, handler: { (action) in
             UIApplication.shared.open(NSURL(string: userViewData.short_url)! as URL, options: [:], completionHandler: nil)
         }))
 
-        alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "remove".localized(), style: .destructive, handler: { (action) in
             let removeHistory = self.linkHistory.remove(at: indexPath.row)
             _ = CoreDataManager.remove(shortUrl: removeHistory.short_url)
             tableView.deleteRows(at: [indexPath], with: .automatic)
 
             if self.linkHistory.count == 0 {
-                self.recentTableView?.isHidden = true
+                // self.recentTableView?.isHidden = true
             }
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let copyAction: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "Copy") { (action, indexPath) in
+        let copyAction: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "copy".localized()) { (action, indexPath) in
             let userViewData = self.linkHistory[indexPath.row]
             UIPasteboard.general.string = userViewData.short_url
-            self.alertView(title: nil, message: "Copied", alertType: "popup")
+            self.alertView(title: nil, message: "copied".localized(), alertType: "popup")
         }
 
-        let removeAction: UITableViewRowAction = UITableViewRowAction(style: .destructive, title: "Remove") { (action, indexPath) in
+        let removeAction: UITableViewRowAction = UITableViewRowAction(style: .destructive, title: "remove".localized()) { (action, indexPath) in
             let removeHistory = self.linkHistory.remove(at: indexPath.row)
             _ = CoreDataManager.remove(shortUrl: removeHistory.short_url)
             tableView.deleteRows(at: [indexPath], with: .automatic)
@@ -154,15 +154,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 18))
-        let label = UILabel(frame: CGRect(x: 10, y: 10, width: (UIScreen.main.bounds.width), height: 50))
+        let label = UILabel(frame: CGRect(x: 10, y: 10, width: (UIScreen.main.bounds.width), height: 40))
         let borderLayer = CALayer()
         
-        label.text = "Recents"
-        label.font = UIFont.boldSystemFont(ofSize: 36.0)
+        label.text = "recents".localized()
+        label.font = UIFont.systemFont(ofSize: 32.0, weight: UIFontWeightBold)
         label.textColor = UIColor.black
         header.backgroundColor = UIColor.white
         borderLayer.backgroundColor = UIColor.lightGray.cgColor
-        borderLayer.frame = CGRect(x: 0, y: (label.frame.height + 19), width: header.frame.width, height: 0.5)
+        borderLayer.frame = CGRect(x: 0, y: (label.frame.height + 20), width: header.frame.width, height: 0.6)
 
         header.addSubview(label)
         header.layer.addSublayer(borderLayer)
@@ -201,9 +201,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
             
             notificationManager.authorizePushNotification(shortUrl)
         } else {
-            self.alertView(title: nil,
-                           message: "Copy Link",
-                           alertType: "popupWithAction")
+            self.alertView(title: nil, message: "copy_link".localized(), alertType: "popupWithAction")
         }
     }
 
@@ -231,7 +229,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                 })
             }
         } else {
-            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "close".localized(), style: .default, handler: { (action) in
                 alert.dismiss(animated: true, completion: nil)
             }))
             
@@ -262,7 +260,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                         self.activityIndicator.stopAnimating()
                         UIApplication.shared.endIgnoringInteractionEvents()
                         self.alertView(title: nil,
-                                       message: "Aw, Snaps! The Internet connection appears to be offline.",
+                                       message: "error_connection".localized(),
                                        alertType: "popupWithAction")
                         return
                     }
@@ -272,7 +270,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                         self.activityIndicator.stopAnimating()
                         UIApplication.shared.endIgnoringInteractionEvents()
                         self.alertView(title: nil,
-                                       message: "Oops! You are trying to do something useful.",
+                                       message: "error_server".localized(),
                                        alertType: "popupWithAction")
                     }
                     
@@ -290,7 +288,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                             self.activityIndicator.stopAnimating()
                             UIApplication.shared.endIgnoringInteractionEvents()
                             self.alertView(title: nil,
-                                           message: "Oops! You are trying to do something useful.",
+                                           message: "error_server".localized(),
                                            alertType: "popupWithAction")
                         }
                     }

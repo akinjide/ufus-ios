@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  ufus
+
+  Created by Akinjide Bankole on 18/05/2018.
+  Copyright © 2018 Akinjide Bankole. All rights reserved.
+*/
+
+second="zweite";
+minute="minute";
+hour="stunde";
+day="tag";
+week="woche";
+month="monat";
+ago="vor";
+timeSuffix="";
+recents="Kürzlich";
+remove="Löschen";
+view_in_browser="Im Browser anzeigen";
+copied="Kopiert";
+copy_link="Link kopieren";
+cancel="Stornieren";
+error_server="Hoppla! Sie versuchen, etwas Nützliches zu tun.";
+error_connection="Ach, Schnappschüsse! Die Internetverbindung scheint offline zu sein.";
+close="Schließen";
+copy="Kopieren";
+copy_original_link="Original Link kopieren";
+pull_to_refresh="Zum Aktualisieren ziehen";
+search_recents="Suche Kürzlich";
+link_shortened="Link gekürzt";

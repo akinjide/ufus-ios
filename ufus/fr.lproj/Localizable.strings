@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  ufus
+
+  Created by Akinjide Bankole on 18/05/2018.
+  Copyright © 2018 Akinjide Bankole. All rights reserved.
+*/
+
+second="seconde";
+minute="minute";
+hour="heure";
+day="journée";
+week="semaine";
+month="mois";
+ago="depuis";
+timeSuffix="";
+recents="Récents";
+remove="Retirer";
+view_in_browser="Afficher dans le navigateur";
+copied="Copié";
+copy_link="Copier le lien";
+cancel="Annuler";
+error_server="Oops! Vous essayez de faire quelque chose d'utile.";
+error_connection="Aw, Snaps! La connexion Internet semble être hors ligne.";
+close="Fermer";
+copy="Copie";
+copy_original_link="Copier le lien d'origine";
+pull_to_refresh="Tirer pour rafraîchir";
+search_recents="Rechercher Récents";
+link_shortened="Lien raccourci";

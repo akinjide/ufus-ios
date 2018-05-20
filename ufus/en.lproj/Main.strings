@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "1aL-zj-1NE"; */
+"1aL-zj-1NE.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "K2H-Ot-6Ql"; */
+"K2H-Ot-6Ql.text" = "Title";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "LvB-07-lAB"; */
+"LvB-07-lAB.text" = "Time";
+
+/* Class = "UITextField"; placeholder = "Paste link"; ObjectID = "S7C-fo-7bV"; */
+"S7C-fo-7bV.placeholder" = "Paste link";

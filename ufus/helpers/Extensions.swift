@@ -22,25 +22,25 @@ extension Date {
         
         if secondsAgo < minute {
             quotient = secondsAgo
-            unit = "second"
+            unit = "second".localized()
         } else if secondsAgo < hour {
             quotient = secondsAgo / minute
-            unit = "minute"
+            unit = "minute".localized()
         } else if secondsAgo < day {
             quotient = secondsAgo / hour
-            unit = "hour"
+            unit = "hour".localized()
         } else if secondsAgo < week {
             quotient = secondsAgo / day
-            unit = "day"
+            unit = "day".localized()
         } else if secondsAgo < month {
             quotient = secondsAgo / week
-            unit = "week"
+            unit = "week".localized()
         } else {
             quotient = secondsAgo / month
-            unit = "month"
+            unit = "month".localized()
         }
         
-        return "\(quotient) \(unit)\(quotient == 1 ? "" : "s") ago"
+        return "\(quotient) \(unit)\(quotient == 1 ? "" : "timeSuffix".localized()) \("ago".localized())"
     }
     
     func toString() -> String {
@@ -48,5 +48,11 @@ extension Date {
         dateFormatter.dateFormat = "MMMM dd yyyy"
         
         return dateFormatter.string(from: self)
+    }
+}
+
+extension String {
+    func localized(withComment comment: String? = nil) -> String {
+        return NSLocalizedString(self, comment: comment ?? "")
     }
 }
